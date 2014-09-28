@@ -1,0 +1,18 @@
+需要安装SSH2和SVN扩展
+
+yum install subversion subversion-devel neon-devel 
+
+http://pecl.php.net/package/svn
+
+tar -zxvf svn-1.0.2.tgz
+cd
+/usr/local/php/bin/phpize  
+./configure --with-php-config=/usr/local/php/bin/php-config
+make  
+make install
+
+php.ini中添加
+extension=svn.so
+
+pkill php
+/usr/local/php/sbin/php-fpm -c start
